@@ -8,8 +8,7 @@
 
 # Check ubuntu version
 UBUNTU_VER=$(lsb_release -sr)
-if [ ${UBUNTU_VER} != '14.04' ] && [ ${UBUNTU_VER} != '16.04' ] && [ ${UBUNTU_VER} != '18.04' ] \
-  && [ ${UBUNTU_VER} != '20.04' ] && [ ${UBUNTU_VER} != '22.04' ]; then
+if [ ${UBUNTU_VER} != '22.04' ]; then
     echo "ERROR: Unsupported Ubuntu version: ${UBUNTU_VER}"
     echo "  Supported versions are: 14.04, 16.04, 18.04, 20.04, and 22.04"
     exit 1
@@ -26,12 +25,8 @@ git clone https://github.com/openscenegraph/OpenSceneGraph.git
 cd OpenSceneGraph; git reset --hard ${OSG_COMMIT}
 mkdir build; cd build
 
-if [ ${UBUNTU_VER} = '14.04' ]; then
-  cmake ..
-elif [ ${UBUNTU_VER} = '16.04' ] || [ ${UBUNTU_VER} = '18.04' ] || [ ${UBUNTU_VER} = '20.04' ] \
-  || [ ${UBUNTU_VER} = '22.04' ]; then
-  cmake -DDESIRED_QT_VERSION=4 ..
-fi
+cmake -DDESIRED_QT_VERSION=4 ..
+
 make -j `nproc`
 sudo make install
 sudo make install_ld_conf

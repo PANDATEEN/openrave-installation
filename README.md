@@ -4,19 +4,32 @@
 Bash scripts to install OpenRAVE from source. 
 
 ## Installation
-### original install step
+### prepare
+1. change the apt source if necessary
+2. change the pip source if necessary
+
+### useful wsl commands
+```bash
+wsl --list --verbose
+wsl --set-default-version 2
+wsl --unregister Ubuntu-22.04
+wsl --install Ubuntu-22.04
+```
+
+### just for source changes
+```bash
+mv /etc/apt/sources.list /etc/apt/sources.list.bkp
+cp /openrave-installation/sources.list /etc/apt/sources.list
+apt update
+mkdir ~/.pip && cp /openrave-installation/pip.config ~/.pip/pip.config
+source ./openrave-installation/proxy.sh set 10811 
+```
+
+### install openrave
 Run the scripts in the following order:
 ```bash
-./install-dependencies.sh
-./install-osg.sh
-./install-fcl.sh
-./install-openrave.sh
+./openrave-installation/install-dependencies.sh
+#./openrave-installation/install-osg.sh #(optional)
+#./openrave-installation/install-fcl.sh #(optional)
+./openrave-installation/install-openrave.sh
 ```
-### latest install step
-0. apt update
-1. change the apt source if necessary
-2. apt install cmake g++ git -y
-3. apt install python3 python3-pip
-4. alias python=python3
-5. chnage the pip source if necessary
-6. run the original install step
