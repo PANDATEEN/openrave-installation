@@ -25,7 +25,7 @@ echo "Requires root privileges:"
 sudo apt-get update
 
 # Programs
-sudo apt-get install -y g++ cmake git wget python-dev python-setuptools python3-pip python-is-python3 python3-numpy
+sudo apt-get install -y g++ cmake git wget python3-dev python-setuptools python3-pip python-is-python3 python3-numpy
 sudo apt-get install -y --no-install-recommends build-essential doxygen octave #mlocate
 
 # Libraries
