@@ -14,6 +14,8 @@ if [ ${UBUNTU_VER} != '22.04' ]; then
     exit 1
 fi
 
+sudo apt-get install -y libccd-dev
+
 # FCL - The Flexible Collision Library
 echo ""
 echo "Installing FCL 0.5.0 from source..."
