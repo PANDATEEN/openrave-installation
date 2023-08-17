@@ -26,7 +26,7 @@ sudo apt-get update
 
 # Programs
 sudo apt-get install -y g++ cmake git wget python3-dev python-setuptools python3-pip python-is-python3 python3-numpy
-sudo apt-get install -y --no-install-recommends build-essential doxygen octave #mlocate
+sudo apt-get install -y --no-install-recommends build-essential doxygen octave mlocate
 
 # Libraries
 sudo apt-get install -y --no-install-recommends ann-tools libann-dev            \
@@ -67,4 +67,4 @@ git remote add woody https://github.com/woodychow/pybind11.git \
 && sudo make install
 
 # updatedb for debugging purposes
-# sudo updatedb
+sudo updatedb
