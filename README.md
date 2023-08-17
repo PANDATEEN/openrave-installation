@@ -19,9 +19,9 @@ wsl --install Ubuntu-22.04
 ### just for source changes
 ```bash
 mv /etc/apt/sources.list /etc/apt/sources.list.bkp
-cp /openrave-installation/sources.list /etc/apt/sources.list
+cp ./openrave-installation/sources.list /etc/apt/sources.list
 apt update
-mkdir ~/.pip && cp /openrave-installation/pip.config ~/.pip/pip.config
+mkdir ~/.pip && cp ./openrave-installation/pip.config ~/.pip/pip.config
 source ./openrave-installation/proxy.sh set 10811 
 ```
 
@@ -29,7 +29,7 @@ source ./openrave-installation/proxy.sh set 10811
 Run the scripts in the following order:
 ```bash
 ./openrave-installation/install-dependencies.sh
-#./openrave-installation/install-osg.sh #(optional)
-#./openrave-installation/install-fcl.sh #(optional)
+./openrave-installation/install-osg.sh
+./openrave-installation/install-fcl.sh
 ./openrave-installation/install-openrave.sh
 ```
