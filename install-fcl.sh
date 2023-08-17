@@ -10,7 +10,7 @@
 UBUNTU_VER=$(lsb_release -sr)
 if [ ${UBUNTU_VER} != '22.04' ]; then
     echo "ERROR: Unsupported Ubuntu version: ${UBUNTU_VER}"
-    echo "  Supported versions are: 14.04, 16.04, 18.04, 20.04, and 22.04"
+    echo "  Supported versions are: 22.04"
     exit 1
 fi
 
