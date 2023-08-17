@@ -1,20 +1,10 @@
 # openrave-installation
+## wsl2 ubuntu 22.04 专用
 
 Bash scripts to install OpenRAVE from source. 
 
-Supported distros:
-* Ubuntu 14.04
-* Ubuntu 16.04
-* Ubuntu 18.04
-* Ubuntu 20.04
-* Ubuntu 22.04
-
-## Travis - Continuous Integration
-
-[![Build Status](https://travis-ci.org/crigroup/openrave-installation.svg?branch=master)](https://travis-ci.org/crigroup/openrave-installation)
-
-
 ## Installation
+### original install step
 Run the scripts in the following order:
 ```bash
 ./install-dependencies.sh
@@ -22,3 +12,11 @@ Run the scripts in the following order:
 ./install-fcl.sh
 ./install-openrave.sh
 ```
+### latest install step
+0. apt update
+1. change the apt source if necessary
+2. apt install cmake g++ git -y
+3. apt install python3 python3-pip
+4. alias python=python3
+5. chnage the pip source if necessary
+6. run the original install step
