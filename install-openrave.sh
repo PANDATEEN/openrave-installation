@@ -31,6 +31,6 @@ mkdir build; cd build
 cmake -DODE_USE_MULTITHREAD=ON -DOSG_DIR=/usr/local/lib64/ \
 	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE 			   \
 	-Dpybind11_DIR=/usr/local/share/cmake/pybind11 \
-	-DBoost_NO_BOOST_CMAKE=1 -DCMAKE_CXX_STANDARD=17 ..
+	-DBoost_NO_BOOST_CMAKE=1 -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_EXTENSIONS=OFF ..
 make -j `nproc`
 sudo make install
