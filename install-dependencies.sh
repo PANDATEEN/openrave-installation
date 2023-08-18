@@ -25,8 +25,19 @@ echo "Requires root privileges:"
 sudo apt-get update
 
 # Programs
-sudo apt-get install -y g++ cmake git wget python3-dev python-setuptools python3-pip python-is-python3 python3-numpy
-sudo apt-get install -y --no-install-recommends build-essential doxygen octave mlocate
+
+sudo apt-get install -y --no-install-recommends build-essential cmake doxygen g++ git octave\
+    python3-dev python-setuptools python-is-python3 python3
+
+echo "in wsl,the mlocate will scan the windows file system,it takes very long time,here is the solution:"
+echo "https://blog.csdn.net/qq_15969343/article/details/129189584"
+echo "after you`ve done all above,you should run this script again"
+echo "but also you can keep waiting,if you`re a very patient person"
+sudo apt-get insatll -y --no-install-recommends mlocate
+
+curl https://bootstrap.pypa.io/pip/get-pip.py --output get-pip.py
+python get-pip.py
+pip install ipython h5py numpy scipy wheel pyopengl
 
 # Libraries
 sudo apt-get install -y --no-install-recommends ann-tools libann-dev            \
@@ -36,11 +47,12 @@ libmpfi-dev  libmpfr-dev liboctave-dev libode-dev libogg-dev libpcre3-dev       
 libqhull-dev libswscale-dev libtinyxml-dev libvorbis-dev libx264-dev            \
 libxml2-dev libxvidcore-dev libbz2-dev
 
+sudo apt-get install -y --no-install-recommends libsoqt520-dev
+sudo apt-get install -y --no-install-recommends libccd-dev                  \
+libcollada-dom2.4-dp-dev liblog4cxx-dev libminizip-dev octomap-tools
+
 # Install boost
 sudo apt-get install -y --no-install-recommends libboost-all-dev libboost-python-dev 
-
-# Install opengl
-pip install pyopengl
 
 # Install RapidJSON
 mkdir -p ~/git 
