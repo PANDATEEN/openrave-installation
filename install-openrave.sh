@@ -14,15 +14,16 @@ if [ ${UBUNTU_VER} != '22.04' ]; then
     exit 1
 fi
 
-# Install Sympy
-# OpenRAVE
-pip install sympy
+# Sympy version 0.7.1
+echo ""
+echo "Downgrading sympy to version 0.7.1..."
+echo ""
+pip install --upgrade --user sympy==0.7.1
 
 sudo apt-get install -y libmsgpack-dev
-sudo apt-get install -y python2-dev python2
 
 # OpenRAVE
-RAVE_COMMIT=1f52e63f4f640fe5e5a493351ec27cb94ab741c3
+RAVE_COMMIT=2024b03554c8dd0e82ec1c48ae1eb6ed37d0aa6e
 echo ""
 echo "Installing OpenRAVE main (10th Feb 2023) from source (Commit ${RAVE_COMMIT})..."
 echo ""
