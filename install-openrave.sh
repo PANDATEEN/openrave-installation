@@ -18,8 +18,11 @@ fi
 # OpenRAVE
 pip install sympy
 
+sudo apt-get install -y libmsgpack-dev
+sudo apt-get install -y python2-dev python2
+
 # OpenRAVE
-RAVE_COMMIT=a982f0ac0b757787ab4c9a9af94f69795e8281cb
+RAVE_COMMIT=1f52e63f4f640fe5e5a493351ec27cb94ab741c3
 echo ""
 echo "Installing OpenRAVE main (10th Feb 2023) from source (Commit ${RAVE_COMMIT})..."
 echo ""
@@ -29,8 +32,8 @@ git clone -b production https://github.com/rdiankov/openrave.git
 cd openrave; git reset --hard ${RAVE_COMMIT}
 mkdir build; cd build
 cmake -DODE_USE_MULTITHREAD=ON -DOSG_DIR=/usr/local/lib64/ \
-	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE 			   \
-	-Dpybind11_DIR=/usr/local/share/cmake/pybind11 \
-	-DBoost_NO_BOOST_CMAKE=1 -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_EXTENSIONS=OFF ..
+	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE \
+ 	-DOPT_PYTHON=OFF \
+	-DBoost_NO_BOOST_CMAKE=1 -DCMAKE_CXX_STANDARD=17 ..
 make -j `nproc`
 sudo make install
