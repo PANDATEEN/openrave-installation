@@ -26,10 +26,10 @@ sudo apt-get update
 
 # Programs
 
-sudo apt-get install -y --no-install-recommends build-essential cmake doxygen g++ git octave\
-    python3-dev python-setuptools python-is-python3 python3
+sudo apt-get install -y --no-install-recommends build-essential cmake doxygen g++ git octave
 
-sudo apt-get install -y --no-install-recommends python2-dev python-setuptools python2
+sudo apt-get install -y --no-install-recommends python2-dev python2 python2-setuptools-whl
+sudo ln -s /usr/bin/python2 /usr/bin/python
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 python get-pip.py
 pip install ipython h5py numpy scipy wheel pyopengl
