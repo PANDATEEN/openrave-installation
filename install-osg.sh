@@ -17,7 +17,7 @@ fi
 # OpenSceneGraph
 OSG_COMMIT=1f89e6eb1087add6cd9c743ab07a5bce53b2f480
 echo ""
-echo "Installing OpenSceneGraph 3.6.5 from source (Commit ${OSG_COMMIT})..."
+echo "Installing OpenSceneGraph 3.4 from source (Commit ${OSG_COMMIT})..."
 echo ""
 
 mkdir -p ~/git; cd ~/git
