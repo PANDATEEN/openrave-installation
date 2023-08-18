@@ -31,8 +31,7 @@ git clone -b production https://github.com/rdiankov/openrave.git
 cd openrave; git reset --hard ${RAVE_COMMIT}
 mkdir build; cd build
 cmake -DODE_USE_MULTITHREAD=ON -DOSG_DIR=/usr/local/lib64/ \
-	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE \
- 	-DOPT_PYTHON=OFF \
-	-DBoost_NO_BOOST_CMAKE=1 -DCMAKE_CXX_STANDARD=17 ..
+	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE 			   \
+	-DBoost_NO_BOOST_CMAKE=1 ..
 make -j `nproc`
 sudo make install
