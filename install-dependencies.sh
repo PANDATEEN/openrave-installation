@@ -29,15 +29,16 @@ sudo apt-get update
 sudo apt-get install -y --no-install-recommends build-essential cmake doxygen g++ git octave\
     python3-dev python-setuptools python-is-python3 python3
 
+sudo apt-get install -y --no-install-recommends python2-dev python-setuptools python2
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+python get-pip.py
+pip install ipython h5py numpy scipy wheel pyopengl
+
 echo "in wsl,the mlocate will scan the windows file system,it takes very long time,here is the solution:"
 echo "https://blog.csdn.net/qq_15969343/article/details/129189584"
 echo "after you`ve done all above,you should run this script again"
 echo "but also you can keep waiting,if you`re a very patient person"
-sudo apt-get insatll -y --no-install-recommends mlocate
-
-curl https://bootstrap.pypa.io/pip/get-pip.py --output get-pip.py
-python get-pip.py
-pip install ipython h5py numpy scipy wheel pyopengl
+sudo apt-get install -y --no-install-recommends mlocate
 
 # Libraries
 sudo apt-get install -y --no-install-recommends ann-tools libann-dev            \
@@ -75,7 +76,7 @@ git remote add woody https://github.com/woodychow/pybind11.git \
 && git cherry-pick 98c9f77e5481af4cbc7eb092e1866151461e3508 \
 && git cherry-pick dae2d434bd806eac67e38f3c49cfc91f46e4fd88 \
 && git cherry-pick 2e08ce9ba75f5a2d87a6f12e6ab657ac78444e8e \
-&& cmake .. -DPYBIND11_TEST=OFF -DPythonLibsNew_FIND_VERSION=3 -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))") \
+&& cmake .. -DPYBIND11_TEST=OFF -DPythonLibsNew_FIND_VERSION=2 \
 && sudo make install
 
 # updatedb for debugging purposes
