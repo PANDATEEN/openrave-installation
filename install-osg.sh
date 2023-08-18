@@ -15,7 +15,7 @@ if [ ${UBUNTU_VER} != '22.04' ]; then
 fi
 
 # OpenSceneGraph
-OSG_COMMIT=7d290daa738ffc00c6a5fe4c5cc876e49736daee
+OSG_COMMIT=1f89e6eb1087add6cd9c743ab07a5bce53b2f480
 echo ""
 echo "Installing OpenSceneGraph 3.6.5 from source (Commit ${OSG_COMMIT})..."
 echo ""
