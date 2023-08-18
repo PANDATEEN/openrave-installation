@@ -20,8 +20,6 @@ echo "Downgrading sympy to version 0.7.1..."
 echo ""
 pip install --upgrade --user sympy==0.7.1
 
-sudo apt-get install -y libmsgpack-dev
-
 # OpenRAVE
 RAVE_COMMIT=2024b03554c8dd0e82ec1c48ae1eb6ed37d0aa6e
 echo ""
