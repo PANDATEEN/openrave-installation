@@ -21,7 +21,7 @@ echo ""
 pip install --upgrade --user sympy==0.7.1
 
 # OpenRAVE
-RAVE_COMMIT=2024b03554c8dd0e82ec1c48ae1eb6ed37d0aa6e
+RAVE_COMMIT=a982f0ac0b757787ab4c9a9af94f69795e8281cb
 echo ""
 echo "Installing OpenRAVE main (10th Feb 2023) from source (Commit ${RAVE_COMMIT})..."
 echo ""
