@@ -30,7 +30,7 @@ git clone -b production https://github.com/rdiankov/openrave.git
 
 cd openrave; git reset --hard ${RAVE_COMMIT}
 mkdir build; cd build
-cmake -DODE_USE_MULTITHREAD=ON -DOSG_DIR=/usr/local/lib64/ \
+cmake -DODE_USE_MULTITHREAD=ON -DOSG_DIR=/usr/local/lib/ \
 	-DUSE_PYBIND11_PYTHON_BINDINGS:BOOL=TRUE 			   \
 	-DBoost_NO_BOOST_CMAKE=1 ..
 make -j `nproc`
